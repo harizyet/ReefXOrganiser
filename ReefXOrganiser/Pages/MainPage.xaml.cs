@@ -22,10 +22,14 @@ public partial class MainPage : ContentPage
 	{
 		var pickedFolder = await _folderPicker.PickFolder();
 
-		FolderLabel.Text = pickedFolder;
-		_projectData.ProjectDirectory = pickedFolder;
+		if ( !String.IsNullOrWhiteSpace(pickedFolder) )
 
-		SemanticScreenReader.Announce(FolderLabel.Text);
+		{
+			FolderLabel.Text = pickedFolder;
+			_projectData.ProjectDirectory = pickedFolder;
+
+			SemanticScreenReader.Announce(FolderLabel.Text);
+		}
 	}
 
 	
