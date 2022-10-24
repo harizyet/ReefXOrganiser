@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReefXOrganiser.CreateProjectPage"
+             Title="Create ProjectPage Page">
+	<ScrollView>
+		<VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+			<Label
+                Text="Create New Project"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+			<HorizontalStackLayout>
+				<Label
+                Text="Surveyor name"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+				
+				<Entry x:Name="entry_surveyorname"
+                Placeholder="Enter Surveyor Name"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                Text="Surveyor Team"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+
+				<Entry x:Name="entry_surveyorteam"
+                Placeholder="Enter Surveyor Team"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                Text="Dive Location"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+
+				<Entry x:Name="entry_divelocation"
+                Placeholder="Enter Survey Location"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                Text="Survey Date"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+
+				<Entry x:Name="entry_surveydate"
+                Placeholder="Enter Survey Date"/>
+			</HorizontalStackLayout>
+
+			<Button 
+                Text="Continue"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Continue to catalogue images"
+                Clicked="OnContinueClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+			<Button 
+                Text="Back"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Back to directory select"
+                Clicked="OnBackClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

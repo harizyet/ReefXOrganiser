@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ReefXOrganiser.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ReefXOrganiser"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+	<ShellContent
+      Title="Create New Project"
+      ContentTemplate="{DataTemplate local:CreateProjectPage}"
+      Route="CreateProjectPage" />
+
+	<ShellContent
+      Title="Project Page"
+      ContentTemplate="{DataTemplate local:ProjectPage}"
+      Route="ProjectPage" />
+
+</Shell>

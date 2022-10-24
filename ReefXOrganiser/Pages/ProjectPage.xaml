@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReefXOrganiser.ProjectPage"
+             Title="Project Page">
+	<ScrollView>
+		<VerticalStackLayout>
+			<Image Source="dotnet_bot.png"  
+			x:Name="ImageView1"  
+            SemanticProperties.Description="Cute dot net bot waving hi to you!"
+            HeightRequest="1024"
+            HorizontalOptions="Center"
+			VerticalOptions="CenterAndExpand"/>
+
+			<HorizontalStackLayout>
+				<Button 
+                    Text="Previous"
+                    FontAttributes="Bold"
+                    SemanticProperties.Hint="Previous Image"
+                    Clicked="OnPreviousClicked"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+				<Button 
+                    Text="Delete"
+                    FontAttributes="Bold"
+                    SemanticProperties.Hint="Delete Image"
+                    Clicked="OnDeleteClicked"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+				<Button 
+                    Text="Next"
+                    FontAttributes="Bold"
+                    SemanticProperties.Hint="Next Image"
+                    Clicked="OnNextClicked"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                    Text="Dive Site"
+                    SemanticProperties.HeadingLevel="Level5"
+                    FontSize="Body"/>
+
+				<Entry x:Name="entry_divesite"
+                    Placeholder="Enter Dive Site"/>
+			</HorizontalStackLayout>			
+			
+			<HorizontalStackLayout>
+				<Label
+                Text="Camera Image Name"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+
+				<Entry x:Name="entry_cameraimagename"
+                Placeholder="Enter Camera Image Name"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                Text="Species Common Name"
+                SemanticProperties.HeadingLevel="Level5"
+                FontSize="Body"/>
+
+				<Entry x:Name="entry_commonspeciesname"
+                Placeholder="Enter Common species Name"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                    Text="Image a/b/c"
+                    SemanticProperties.HeadingLevel="Level5"
+                    FontSize="Body"/>
+
+				<Entry x:Name="entry_samespeciesid"
+                    Placeholder="Enter Image ID"/>
+			</HorizontalStackLayout>
+
+			<HorizontalStackLayout>
+				<Label
+                    Text="Notes"
+                    SemanticProperties.HeadingLevel="Level5"
+                    FontSize="Body"/>
+
+				<Entry x:Name="entry_notes"
+                    Placeholder="Enter Notes (Optional)"/>
+			</HorizontalStackLayout>
+
+			<Button 
+                Text="Export"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Export Project"
+                Clicked="OnExportClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+			<Button 
+                Text="Save Project"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Save Project"
+                Clicked="OnSaveClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

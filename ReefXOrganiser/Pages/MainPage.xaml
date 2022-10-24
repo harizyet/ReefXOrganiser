@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReefXOrganiser.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="ReefX Organiser tool"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to the ReefX Organiser tool. To Begin, select the folder that contains your photos below"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to the ReefX Organiser tool"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+			<Label 
+                Text=""
+                Grid.Row="0"
+                FontSize="18"
+                FontAttributes="Bold"
+                x:Name="FolderLabel"
+                HorizontalOptions="Center" />
+			
+			<Button 
+                Text="Select Folder"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Allows you to pick a folder on the filesystem"
+                Clicked="OnPickFolderClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+
+			<Button 
+                Text="Continue"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Continue to catalogue images"
+                Clicked="OnContinueClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+			<Button 
+                Text="Load Project"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="Load Existing Project"
+                Clicked="OnLoadClicked"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+
+		</VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
