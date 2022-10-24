@@ -123,7 +123,7 @@ public partial class ProjectPage : ContentPage
 
 	private void ExportFolder(string savePath)
 	{
-		var finalPath = Path.Combine(savePath, $"{_projectData.Date}_{_projectData.Location}");
+		var finalPath = Path.Combine(savePath, $"{_projectData.Date}_{_projectData.SurveyorName}");
 		Directory.CreateDirectory(finalPath);
 
 		foreach ( var data in _projectData.ImageDataList )
