@@ -7,7 +7,7 @@
 			get; set;
 		}
 
-		public string Date
+		public DateTime Date
 		{
 			get; set;
 		}

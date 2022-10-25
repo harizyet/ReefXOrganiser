@@ -26,14 +26,22 @@
 			</HorizontalStackLayout>
 
 			<HorizontalStackLayout>
-				<Label
-                Text="Surveyor Team"
+                <Label
+                Text="Survey Team"
                 SemanticProperties.HeadingLevel="Level5"
                 FontSize="Body"/>
-
-				<Entry x:Name="entry_surveyorteam"
-                Placeholder="Enter Surveyor Team"/>
-			</HorizontalStackLayout>
+                
+                <Picker x:Name="picker_team">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Coral</x:String>
+                            <x:String>Slug</x:String>
+                            <x:String>Other Inverts</x:String>
+                            <x:String>Fish</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
 
 			<HorizontalStackLayout>
 				<Label
@@ -51,9 +59,10 @@
                 SemanticProperties.HeadingLevel="Level5"
                 FontSize="Body"/>
 
-				<Entry x:Name="entry_surveydate"
-                Placeholder="Enter Survey Date"/>
-			</HorizontalStackLayout>
+                <DatePicker x:Name="datepicker_divedate" MinimumDate="{Binding MinDate}"
+                MaximumDate="{Binding MaxDate}"
+                Date="{Binding SelectedDate}" />
+            </HorizontalStackLayout>
 
 			<Button 
                 Text="Continue"

@@ -45,7 +45,6 @@ public static class MauiProgram
 #elif MACCATALYST
 		builder.Services.AddTransient<IFolderPicker, Platforms.MacCatalyst.FolderPicker>();
 #endif
-		builder.Services.AddSingleton<ImageData>();
 		builder.Services.AddSingleton<ProjectData>();
 
 		builder.Services.AddTransient<MainPage>();

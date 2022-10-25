@@ -12,34 +12,30 @@ public partial class CreateProjectPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 		_projectData = projectData;
-	}
+		datepicker_divedate.Date = vm.GetToday();
+
+    }
 
 	private async void OnContinueClicked(object sender, EventArgs e)
 	{
 		if ( await VerifyUserEntryAsync())
 		{
-			_projectData.Date = entry_surveydate.Text;
+			_projectData.Date = datepicker_divedate.Date;
 			_projectData.Location = entry_divelocation.Text;
 			_projectData.SurveyorName = entry_surveyorname.Text;
-			_projectData.Team = entry_surveyorteam.Text;
+			_projectData.Team = (string)picker_team.SelectedItem;
 			GenerateImageData();
 			await Shell.Current.GoToAsync(nameof(ProjectPage));
 		}
 	}
-	
-	private async void OnBackClicked(object sender, EventArgs e)
+
+    private async void OnBackClicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync($"///{ nameof(MainPage)}");
 	}
 
 	private async Task<bool> VerifyUserEntryAsync()
 	{
-		if ( String.IsNullOrWhiteSpace(entry_surveydate.Text) )
-		{
-			await DisplayAlert("Warning", "Please enter a Survey Date", "OK");
-			return false;
-		}
-
 		if ( String.IsNullOrWhiteSpace(entry_divelocation.Text) )
 		{
 			await DisplayAlert("Warning", "Please enter a Dive Location", "OK");

@@ -105,12 +105,15 @@ public partial class ProjectPage : ContentPage
 	private async Task ExportCSVAsync(string savePath)
 	{
 		string csvOutput = String.Empty;
+		var surveyorName = _projectData.SurveyorName.ToLower();
+        surveyorName = surveyorName.Trim();
 
-		foreach ( var data in _projectData.ImageDataList )
+
+        foreach ( var data in _projectData.ImageDataList )
 		{
 			csvOutput += _projectData.Team;
 			csvOutput += ",";
-			csvOutput += $"{_projectData.Date}_{_projectData.Location}{data.DiveSite}_{data.CameraImageName}_{_projectData.SurveyorName.ToLower()}_{data.SpeciesCommonName.ToLower()}_{data.ImageId.ToLower()}.{data.ImageExt}";
+			csvOutput += $"{_projectData.Date.ToString("yyMMdd")}_{_projectData.Location}{data.DiveSite}_{data.CameraImageName}_{surveyorName}_{data.SpeciesCommonName.ToLower()}_{data.ImageId.ToLower()}.{data.ImageExt}";
 			csvOutput += ",";
 			csvOutput += $"{data.SpeciesCommonName}";
 			csvOutput += ",";
@@ -118,17 +121,20 @@ public partial class ProjectPage : ContentPage
 			csvOutput += "\n";
 		}
 
-		await File.WriteAllTextAsync(Path.Combine(savePath, $"{_projectData.Date}_{_projectData.SurveyorName}.csv"), csvOutput);
+		await File.WriteAllTextAsync(Path.Combine(savePath, $"{_projectData.Date.ToString("yyMMdd")}_{surveyorName}.csv"), csvOutput);
 	}
 
 	private void ExportFolder(string savePath)
 	{
-		var finalPath = Path.Combine(savePath, $"{_projectData.Date}_{_projectData.SurveyorName}");
+        var surveyorName = _projectData.SurveyorName.ToLower();
+        surveyorName = surveyorName.Trim();
+
+        var finalPath = Path.Combine(savePath, $"{_projectData.Date.ToString("yyMMdd")}_{surveyorName}");
 		Directory.CreateDirectory(finalPath);
 
 		foreach ( var data in _projectData.ImageDataList )
 		{
-			var finalFileName = $"{_projectData.Date}_{_projectData.Location}{data.DiveSite}_{data.CameraImageName}_{_projectData.SurveyorName.ToLower()}_{data.SpeciesCommonName.ToLower()}_{data.ImageId.ToLower()}.{data.ImageExt}";
+			var finalFileName = $"{_projectData.Date.ToString("yyMMdd")}_{_projectData.Location}{data.DiveSite}_{data.CameraImageName}_{_projectData.SurveyorName.ToLower()}_{data.SpeciesCommonName.ToLower()}_{data.ImageId.ToLower()}.{data.ImageExt}";
 			File.Copy(data.ImagePath, Path.Combine(finalPath,finalFileName), true);
 		}
 	}
