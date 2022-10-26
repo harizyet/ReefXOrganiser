@@ -18,7 +18,7 @@ This project is written in C# .Net using MAUI to allow for cross-platform use of
 - Project sav file is not transferrable to another PC.
 
 ### How to install
-You can download the latest version of the reefxorganiser app from the [release](https://github.com/harizyet/ReefXOrganiser/releases) section.
+You can download the latest version of the reefxorganiser app from the [release](https://github.com/harizyet/ReefXOrganiser/releases) section. Unzip and run the .exe file.
 
 If you are unable to run, you'll need to download the [windows app sdk](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads "windows app sdk"), select the latest installer.
 
