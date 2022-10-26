@@ -17,6 +17,10 @@ This project is written in C# .Net using MAUI to allow for cross-platform use of
 - Terrible UI
 - Project sav file is not transferrable to another PC.
 
+### How to install
+You'll also need to download and install the [windows app sdk](http://https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads "windows app sdk"), select the installer. 
+You can download the latest version of the reefxorganiser app from the release section.
+
 ### How to use
 ![](https://github.com/harizyet/ReefXOrganiser/blob/main/README-IMG/menu.png?raw=true)
 To begin, select a folder that contains your images. Currently, PNG, JPG and TIFF is supported. The program will then detect and load all the images in the directory and subdirectories. Once done, click continue.
@@ -39,5 +43,3 @@ The CSV file it generates would then be sufficient for you to copy and paste int
 
 ![](https://github.com/harizyet/ReefXOrganiser/blob/main/README-IMG/exportimagefolder.png?raw=true)
 While the images from the source would be copied over to the destination with the images renamed appropriately.
-
-
