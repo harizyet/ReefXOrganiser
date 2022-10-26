@@ -18,8 +18,9 @@ This project is written in C# .Net using MAUI to allow for cross-platform use of
 - Project sav file is not transferrable to another PC.
 
 ### How to install
-You'll also need to download and install the [windows app sdk](http://https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads "windows app sdk"), select the installer. 
-You can download the latest version of the reefxorganiser app from the release section.
+You can download the latest version of the reefxorganiser app from the [release](https://github.com/harizyet/ReefXOrganiser/releases) section.
+
+If you are unable to run, you'll need to download the [windows app sdk](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads "windows app sdk"), select the latest installer.
 
 ### How to use
 ![](https://github.com/harizyet/ReefXOrganiser/blob/main/README-IMG/menu.png?raw=true)
